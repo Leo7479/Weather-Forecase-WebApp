@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Application</title>
+    <link rel="stylesheet" href="./stylings/style.css">
+    <link rel="shortcut icon" type="text/css" href="./images/favicon.png">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <input type="text" name="cityName" id="cityName">
+            <button id="searchBtn">Get Weather</button>
+        </div>
+        <div class="weatherDetails">
+            <div class="detailsIcon">
+                <div class="weatherImage">
+                    <img src="./images/clear.png" alt="clear sky" id="weatherIcon">
+                </div>
+                <div class="weatherText" id="weatherText"></div>
+            </div>
+            <div class="details">
+                <div class="weather">
+                    <div>
+                        <i class="fa-solid fa-temperature-half"></i>
+                        <span>Temperature</span>
+                    </div>
+                    <span><span id="weatherVal"></span>&deg;C</span>
+                </div>
+                <div class="feelsLike">
+                    <div>
+                        <i class="fa-solid fa-temperature-half"></i>
+                        <span>Feels Like</span>
+                    </div>
+                    <span><span id="feelsLikeVal"></span>&deg;C</span>
+                </div>
+                <div class="wind">
+                    <div>
+                        <i class="fa-solid fa-wind"></i>
+                        <span>Wind</span>
+                    </div>
+                    <span><span id="windVal"></span> km/hr</span>
+                </div>
+                <div class="humidity">
+                    <div>
+                        <i class="fa-solid fa-droplet"></i>
+                        <span>Humidity</span>
+                    </div>
+                    <span><span id="humidityVal"></span> %</span>
+                </div>
+                <div class="visibility">
+                    <div>
+                        <i class="fa-solid fa-eye"></i>
+                        <span>Distance</span>
+                    </div>
+                    <span><span id="visibilityVal"></span> km</span>
+                </div>
+                <div class="pressure">
+                    <div>
+                        <img src="./images/airpressure.png" alt="airpressure">
+                        <span>Pressure</span>
+                    </div>
+                    <span><span id="pressureVal"></span> hPa</span>
+                </div>
+                <div class="sunrise">
+                    <div>
+                        <i class="fa-regular fa-sun"></i>
+                        <span>Sun Rise</span>
+                    </div>
+                    <span><span id="sunriseVal"></span> AM</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay">
+        <div class="loading">Getting Data...</div>
+    </div>
+    <script src="https://kit.fontawesome.com/1454600ae4.js" crossorigin="anonymous"></script>
+    <script src="./scripts/script.js" defer></script>
+</body>
+
+</html>

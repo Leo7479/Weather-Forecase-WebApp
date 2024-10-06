@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-image: linear-gradient(to top,rgba(5, 29, 163, 0.782),rgb(107,189,237));
+}
+.container{
+    width: 70%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.card{
+    width: 80%;
+    height: 20%;
+    background-image: linear-gradient(50deg, rgba(0, 17, 112, 0.782), rgba(167, 166, 166, 0.815), rgb(127,0,252));
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.card input[type=text]{
+    width: 55%;
+    height: 45%;
+    outline: none;
+    padding: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    box-sizing: content-box;
+    transition: all 0.1s ease-out;
+
+}
+.card input[type=text]:focus{
+    border-bottom: 3px solid white;
+}
+.card button{
+    width: 30%;
+    height: 45%;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.1s ease-out;
+    font-weight: bold;
+
+}
+.card button:hover{
+    transform: scale(1.05) translate3d(-2px, -2px, 0);
+    box-shadow: 4px 4px 1px rgb(255,0,252);
+}
+.weatherDetails{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+.detailsIcon{
+    width: 25%;
+    height: 75%;
+    background-color: white;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr;
+    margin-top: 5px;
+}
+.weatherImage{
+    display: grid;
+    place-items: center;
+}
+.weatherImage > img{
+    width: 80%;
+}
+.detailsIcon > .weatherText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.details{
+    width: 70%;
+    height: 75%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.3fr repeat(3,1fr);
+    gap: 20px;
+    color: white;
+    font-size: 1.5rem;
+}
+.details > div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    background-image: linear-gradient(50deg, rgba(0, 17, 112, 0.5), rgba(0,17,112,0.9));
+    border-radius: 15px;
+    position: relative;
+    & > span{
+        font-size: 1rem;
+        text-align: center;
+    }
+}
+.details > div:first-child{
+    justify-content: space-around;
+    & > span{
+        width: unset;
+    }
+    & > span > span{
+        font-size: 5rem;
+    }
+}
+.details > div > div{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 5px;
+}
+.details > div > div > span{
+    font-size: 1rem;
+    left: 5%;
+    opacity: 0.4;
+    font-size: 0.8rem;
+}
+.details > div > span > span{
+    font-size: 2rem;
+}
+.weather{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.details img{
+    filter: invert();
+    width: 30px;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.loading{
+    width: fit-content;
+    text-align: center;
+    font-family: monospace;
+    color: white;
+    font-size: 30px;
+    clip-path: inset(0 100% 0 0);
+}
+@keyframes loading{
+    100%
+    {clip-path: inset(0 -1ch 0 0)}
+}
+@media only screen and (max-width: 760px) {
+    .card{
+        height: 80px;
+        margin-top: 20px;
+    }
+    .container{
+        width: 100%;
+        height: fit-content;
+    }
+    .weatherDetails{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .detailsIcon{
+        width: 30%;
+    }
+    .details{
+        width: 90%;
+    }
+    .details > div > div {
+        width: 50%;
+    }
+    .details > div span{
+        width: 50%;
+        text-align: left;
+    }
+}
